@@ -1,0 +1,73 @@
+.footer-container {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    background-color: black;
+    color: wheat;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-container-item {
+    margin: 2rem;
+    padding: 4%;
+}
+
+.footer-container li {
+    padding: 3% 3%;
+    list-style-type: none;
+}
+
+.footer-container a > p {
+    text-decoration: none;
+    color: #2200ff;
+    font-size: 3vh;
+    padding: 5% 10%;
+    background-color: #bbaaff;
+    border-radius: 1.2rem;
+    text-align: center;
+    transition: all 2s;
+    box-shadow: 0 0 5px tomato;
+    height: 7vh;
+}
+
+.footer-container h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.footer-container p{
+    font-size: 1.2rem;
+}
+
+.footer-container-item:first-child li {
+    font-weight: 600;
+}
+
+.footer-container-item:nth-child(3) p {
+    font-weight: 600;
+}
+
+.footer-container-item:last-child p {
+    margin-bottom: 2%;
+}
+
+.footer-container-item:last-child h5 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.footer-container a > p:hover {
+    background-color: #2200ff;
+    color: #bbaaff;
+    font-size: 2.3vh;
+    padding: 5.7% 10%;
+    box-shadow: 0 0 5px rgba(255, 44, 7), inset 0 0 5px rgba(7, 255, 44);
+}
+
+.footer-container a > p:active {
+    background-color:  rgba(7, 255, 44);
+    color: rgb(50, 40, 50);
+    font-size: 3vh;
+}
+

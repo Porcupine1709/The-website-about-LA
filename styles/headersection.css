@@ -1,0 +1,115 @@
+#firstheader {
+    background-image: url(../images/LAnightpanorama.jpg);
+    height: 50vh;
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: -2.5vh;
+    display: none;
+}
+
+.header-container {
+    width: var(--container-width);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1%;
+    align-items: center;
+    text-align: center;
+    margin: 0.6% auto auto;
+    margin-top: 2.7vh;
+    transition: all 1s;
+    z-index: 4;
+}
+
+.navbar-options {
+    background-color: #eee;
+    box-shadow: 0 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    transition: all 2s;
+    padding: 2%; 
+    padding-left: 40%;
+    height: 50px;
+    color: black;
+    display: none;
+}
+
+span#options {
+    float: right;
+}
+
+span#options::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+span#closeNavbar {
+    position: absolute;
+    right: 3vh;
+    top: 1.7vh;
+    color: #eee;
+    font-size: 7vh;
+    cursor: pointer;
+}
+
+.navbar-for-mobile {
+    background-color: rgba(0, 50, 50, 0.8);
+    position: fixed;
+    left: -150%;
+    height: 100vh;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-for-mobile ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+}
+
+.navbar-for-mobile li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: 1px;
+    transition: all 2s;
+    padding: 20% 10%; 
+    width: 140%;
+    font-weight: 700;
+    color: #999;
+}
+
+.navbar-for-mobile a {
+    color: #999;
+    transition: all 1s;
+}
+
+.navbar-for-mobile li:hover a{
+    color: #eeeeee;
+}
+
+.header-grid-item {
+    background-color: #eee;
+    box-shadow: 0 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    transition: all 2s;
+    padding: 2%; 
+    height: 50px;
+    color: black;
+}
+
+.header-grid-item a {
+    color: black;
+    transition: all 2s;
+}
+
+.header-grid-item:hover, .header-grid-item:hover a{
+    background-color: #555555;
+    color: #eeeeee;
+}

@@ -1,0 +1,49 @@
+.socialmedia-buttons {
+    position: fixed;
+    top: 30vh;
+    left: -15%;
+}
+
+.socialmedia-buttons a {
+    display: block;
+    padding: 2vh;
+    font-size: 3.5vh;
+    color: #222222;
+    text-align: center;
+    transition: all 1s;
+}
+
+.socialmedia-buttons a#facebook {
+    border-top-right-radius: 10px;
+    background-color: blue;
+}
+
+.socialmedia-buttons a#youtube {
+    background-color: red;
+}
+
+.socialmedia-buttons a#instagram {
+    background-image: linear-gradient(to bottom left, violet, red, yellow);
+}
+
+.socialmedia-buttons a#pinterest {
+    background-color: rgb(250, 10, 10);
+}
+
+.socialmedia-buttons a#twitter {
+    background-color: rgb(0, 217, 255);
+}
+
+.socialmedia-buttons a#google {
+    background-image: linear-gradient(to right, red, green);
+    border-bottom-right-radius: 10px;
+}
+
+.socialmedia-buttons a:hover {
+    color: #dddddd;
+    box-shadow: 1px 1px 5px #32ff23;
+}
+
+.socialmedia-buttons a:active { 
+    color: #33ffaa;
+}

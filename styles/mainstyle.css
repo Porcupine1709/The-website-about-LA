@@ -1,0 +1,32 @@
+:root {
+    --container-width: 95%;
+    --container-margin: 3% auto auto;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(200, 150, 20) 0%, rgb(50, 120, 100) 100%);
+}
+
+.stbgclr {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+.ndbgclr {
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+a, abbr {
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
