@@ -33,7 +33,7 @@ async function extractNYTData() {
         try {
            article.image += extract[i].multimedia[0].url
         } catch (TypeError) {
-           console.log('it is ok')
+           article.image = 'images/NYT.png'
         } 
         articles.push(article)
     }
