@@ -1,0 +1,29 @@
+#map {
+    margin-top: 10vh;
+    height: 60vh;
+    width: 90%;
+    transition: all 1s;
+    border-radius: 2vh;
+    box-shadow: 1vh 1vh 3vh #444444;
+    z-index: 1;
+}
+
+#map:hover {
+    box-shadow: 1vh 1vh 5vh #22dd00;
+    border-radius: 0;
+    height: 70vh;
+}
+
+@media only screen and  (max-width: 1000px) {
+    #location-headline {
+        font-size: 2.5vh;
+    }
+}
+
+@media only screen and  (max-width: 600px) {
+    #map {
+        box-shadow: 1vh 1vh 3vh #ffff00, -1vh -1vh 3vh #ffff00;
+        border-radius: 0;
+        height: 70vh;
+    }
+}

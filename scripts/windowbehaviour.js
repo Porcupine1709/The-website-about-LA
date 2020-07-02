@@ -58,7 +58,9 @@ async function getWeather() {
 
 /*Adds method which will be executed when window.onload event is fired*/
 window.onload = async () => {
-  //await getWeather()
+  if(window.location.pathname === '/index.html') {
+    //await getWeather()
+  }
   if (window.innerWidth > 500) {
     document.getElementById("gridgap").checked = gridGap
     gridGap ? _navbar.style.borderBottom = 'none' : _navbar.style.borderBottom = 'solid black 3px'

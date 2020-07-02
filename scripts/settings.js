@@ -9,10 +9,23 @@ async function setMarginAndGridGap(margin, gridGap) {
   const divSections = Array.from(document.body.children).filter(item => item.tagName === 'DIV')
  
   //retrieving div elements which need to be modified on index.html page
-  if (location.pathname === '/index.html') {
-    divSections.splice(8)
-    divSections.splice(2, 2)
-    divSections.shift()
+  
+  switch (location.pathname) {
+    case('/index.html'):
+      divSections.splice(8)
+      divSections.splice(2, 2)
+      divSections.shift()
+      break
+    case ('/location.html'):
+      divSections.splice(2, 2)
+      divSections.splice(divSections.length - 2, 2)
+      divSections.shift()
+      break
+    case ('/about.html'):
+      divSections.splice(2, 2)
+      divSections.pop()
+      divSections.shift()
+      break
   }
 
   //Setting the width for all of these elements and left margin in procents, setting mutual transition property 
@@ -32,14 +45,25 @@ async function dealWithUpperSection(gridGap) {
   let stickyNavbar = localStorage.getItem('navbarposition') === 'true'
   let firstHeader = document.getElementById('firstheader')
   let navbar = document.getElementsByClassName('header-container')[0]
-  let mainSection = document.getElementsByClassName('content-container')[0]
+  let mainSection
+  switch(location.pathname) {
+    case('/index.html'):
+      mainSection = document.getElementsByClassName('content-container')[0]
+      break
+    case('/location.html'):
+      mainSection = document.getElementById('location-headline')
+      break
+    case('/about.html'):
+      mainSection = document.getElementById('about-section')
+      break
+  }
 
   insertHeader ? firstHeader.style.display = 'block' : firstHeader.style.display = 'none'
   gridGap ? navbar.style.borderBottom = 'none' : navbar.style.borderBottom = 'solid black 3px'
   
   if(stickyNavbar) {
       navbar.style.position = 'fixed'
-      mainSection.style.marginTop = '7vh'
+      mainSection.style.marginTop = '17vh'
   } else {
       navbar.style.position = 'static'
       mainSection.style.marginTop = '17vh'

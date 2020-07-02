@@ -1,0 +1,132 @@
+#article-section {
+    position: relative;
+    height: 52.5vh;
+    margin: 1vh 2% 7vh 2%;
+    background: #4da0b0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4da0b0, #d39d38); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4da0b0, #d39d38);
+    box-shadow: 1vh 1vh 2vh;
+    border-radius: 1vh;
+    border: solid #fcd000 2px;
+}
+
+#articles {
+    position: absolute;
+    top: 2%;
+    left: 7%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 86%;
+    grid-gap: 1%;
+    height: 50vh;
+}
+
+.article {
+    position: relative;
+    width: 100%;
+    background-color: #555555;
+    color: #eeeeee;
+    border-radius: 1vh;
+    box-shadow: 0 0 1vh;
+    transition: all 1s;
+}
+
+.fresh-article {
+    transition: all 1s;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #00ffaa;
+    position: relative;
+    border: solid #333333 2px;
+    box-shadow: inset 0 -14vh 6vh;
+}
+
+.text-article {
+    position: absolute;
+    bottom: 0;
+    margin: 2vh;
+}
+
+.text-article p {
+    color: #111111;
+    font-size: 2.5vh;
+    transition: all 1s;
+    font-weight: 700;
+}
+
+.text-article h3 {
+    color: #d33300;
+    font-size: 3vh;
+    transition: all 1s;
+}
+
+.fresh-article:hover {
+    box-shadow: inset 0 -30vh 10vh;
+    border-radius: 1vh;
+}
+
+.fresh-article:hover h3{
+    color: #333333;
+}
+
+.fresh-article:hover p{
+    color: #26c000;
+}
+
+.article i {
+    position: absolute;
+    left: 15vw;
+    top: 41%;
+    transform: translate(50%, 0);
+    font-size: 5vw;
+}
+
+.article-control {
+    width: 5%;
+    background-color: #111111;
+    font-size: 7vh;
+    color: #ffffff;
+    height: 50vh;
+    text-align: center;
+    transition: all 1s;
+    border-radius: 1vh;
+}
+
+.article-control p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+}
+
+#previous-article {
+    position: absolute;
+    left: 1%;
+    top: 2%;
+}
+
+#next-article {
+    position: absolute;
+    right: 1%;
+    top: 2%;
+}
+
+.article-control:hover {
+    background-color: #333333;
+}
+
+#previous-article:hover p {
+    left: 35%;
+}
+
+#next-article:hover p {
+    right: 35%;
+}
+
+.article:hover {
+    box-shadow: 0 0 2vh,  0 0 2vh ;
+}
+

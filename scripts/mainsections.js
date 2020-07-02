@@ -2,11 +2,24 @@
 const divSections = Array.from(document.body.children).filter(item => item.tagName === 'DIV')
 let margin = parseInt(localStorage.getItem('margin'))
 
-if (location.pathname === '/index.html') {
-   divSections.splice(8)
-   divSections.splice(2, 2)
-   divSections.shift()
-}
+switch (location.pathname) {
+   case('/index.html'):
+     divSections.splice(8)
+     divSections.splice(2, 2)
+     divSections.shift()
+     break
+   case ('/location.html'):
+     divSections.splice(2, 2)
+     divSections.splice(divSections.length - 2, 2)
+     divSections.shift()
+     break
+   case ('/about.html'):
+     divSections.splice(2, 2)
+     divSections.pop()
+     divSections.shift()
+     break
+ }
+
 
 if (window.innerWidth > 500)
    divSections.forEach(element => {

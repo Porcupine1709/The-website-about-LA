@@ -1,0 +1,16 @@
+#about-section {
+    width: var(--container-width);
+    margin: var(--container-margin);
+    margin-top: 17vh;
+    background-color: aquamarine;
+    border-radius: 2vh;
+    border: solid #333333;
+    box-shadow: 2vh 2vh 5vh;
+    padding: 3vh;
+}
+
+#about-section li {
+    list-style-type: none;
+}
+
+

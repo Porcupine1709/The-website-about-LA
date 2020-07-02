@@ -8,21 +8,6 @@
         background-image: url('../images/LAsquare5.jpg');
     } 
 
-
-    .lower-container {
-        display: block;
-        background-color: #00ccdd;
-        margin-top: 10vh;
-        padding: 2vh;
-    }
-
-    .lower-grid-item {
-        display: block;
-        position: relative;
-        top: 20px;
-    }
-
-
     .socialmedia-buttons {
         position: static;
         text-align: center;
@@ -62,6 +47,7 @@
 
     .description-paragraph #link {
         opacity: 1;
+        font-size: 1vh;
     }
 
     .gallery-section {
@@ -114,6 +100,7 @@
         text-align: center;
         background-color: #ffffff;
         padding: 2vh;
+        margin-top: 10vh;
     }
     
     .section-grid-item {
@@ -128,17 +115,8 @@
         display: none;
     }
 
-    .lower-container {
-        display: block;
-        background-color: #cccccc;
-        margin-top: 10vh;
-        padding: 2vh;
-    }
-
-    .lower-grid-item {
-        display: block;
-        position: relative;
-        top: 20px;
+    #article-section {
+        display: none;
     }
 
     .socialmedia-buttons {
@@ -150,14 +128,6 @@
     .socialmedia-buttons a {
         display: inline-block;
         margin: 0;
-    }
-
-    .socialmedia-buttons a#facebook {
-        border-top-right-radius: 0;
-    }
-
-    .socialmedia-buttons a#google {
-        border-bottom-right-radius: 0;
     }
 
     .video {

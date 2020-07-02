@@ -1,6 +1,17 @@
 /*This script is responsible for document body and some of its elements behaviour*/
 const header = document.getElementsByClassName('header-container')[0]
-const mainSection = document.getElementsByClassName('content-container')[0]
+let mainSection
+switch(location.pathname) {
+  case('/index.html'):
+    mainSection = document.getElementsByClassName('content-container')[0]
+  break
+  case('/location.html'):
+    mainSection = document.getElementById('location-headline')
+    break
+  case('/about.html'):
+    mainSection = document.getElementById('about-section')
+    break
+}
 let prevScrollpos = window.pageYOffset
 document.body.style.transition = 'all 2s'
 
@@ -39,10 +50,11 @@ async function changeHeaderMargin() {
                 mainSection.style.marginTop = '17vh'
             } else {
                 header.style.position = 'fixed'
-                if(window.innerWidth < 1000)
+                if(window.innerWidth < 1000 && window.innerWidth > 600){
                     mainSection.style.marginTop = '34vh'
-                else if (window.innerWidth > 1000)
+                } else if (window.innerWidth > 1000) {
                     mainSection.style.marginTop = '27vh'
+                }
                 header.style.top = '-1.23em'
                 header.style.left = margin
             }
@@ -86,15 +98,30 @@ async function moveSocialMedias() {
   var currentScrollPos = window.pageYOffset;
   let socialMedais = document.getElementsByClassName('socialmedia-buttons')[0]
   let socialMediahidePoint
-  window.localStorage.getItem('insertHeader') === 'true'?
-    socialMediahidePoint = window.innerHeight * 0.50 :
-    socialMediahidePoint = window.innerHeight * 0.05
+    window.localStorage.getItem('insertHeader') === 'true'?
+      socialMediahidePoint = window.innerHeight * 0.50 :
+      socialMediahidePoint = window.innerHeight * 0.05
+  let bottomSMHidePoint
+   switch (location.pathname) {
+     case ('/index.html'):
+       bottomSMHidePoint = document.body.scrollHeight * 1
+       window.localStorage.getItem('insertHeader') === 'true'?
+         socialMediahidePoint = window.innerHeight * 0.50 :
+         socialMediahidePoint = window.innerHeight * 0.05
+       break;
+     case('/location.html'):
+       bottomSMHidePoint = document.body.scrollHeight * 0.6
+       window.localStorage.getItem('insertHeader') === 'true'?
+         socialMediahidePoint = window.innerHeight * 0.30 :
+         socialMediahidePoint = window.innerHeight * 0.05
+       break;
+   }
   
   socialMedais.style.transition = 'left 0.5s'
 
   //Will be executed if documents width is more than 1000 px and side margin is more than 5%
   if(window.innerWidth > 1000 && margin > 5) {
-    if(window.pageYOffset < socialMediahidePoint || currentScrollPos > document.body.scrollHeight * 0.6) {
+    if(window.pageYOffset < socialMediahidePoint || currentScrollPos > bottomSMHidePoint * 0.6) {
       socialMedais.style.left = '-5%'
     } else {
       socialMedais.style.left = '0'

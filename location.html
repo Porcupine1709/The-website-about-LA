@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/mainstyle.css">
     <link rel="stylesheet" href="styles/headersection.css">
-    <link rel="stylesheet" href="styles/mainsection.css">
-    <link rel="stylesheet" href="styles/footersection.css">
     <link rel="stylesheet" href="styles/gallerysection.css">
-    <link rel="stylesheet" href="styles/videoframe.css">
+    <link rel="stylesheet" href="styles/footersection.css">
     <link rel="stylesheet" href="styles/socialmedia.css">
     <link rel="stylesheet" href="styles/media.css">
-    <link rel="stylesheet" href="styles/articlesection.css">
+    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="styles/headline.css">
     <link rel="shortcut icon" type="image/png" href="images/bridge.png">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <title>Grid HomePage</title>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <title>Location</title>
 </head>
 <body>
     <div id="firstheader">
@@ -24,11 +24,11 @@
     </div>
     
     <div class="header-container">
-        <div class="header-grid-item"><a href=""><h5>Home &#127969;</h5>
+        <div class="header-grid-item"><a href="index.html"><h5>Home &#127969;</h5>
         </a>
         </div>
         <div class="header-grid-item">
-            <a href="location.html"><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
+            <a href=""><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
         </div>
         <div class="header-grid-item">
             <a href=""><h5>Places &#127745;</h5></a>
@@ -43,67 +43,17 @@
     <div class="navbar-for-mobile">
         <span id="closeNavbar">&times;</span>
         <ul>
-            <li><a>Home &#127969;</a></li>
-            <li><a href="location.html">Location &#128681;</a></li>
+            <li><a href="index.html">Home &#127969;</a></li>
+            <li><a>Location &#128681;</a></li>
             <li><a>Places &#127745;</a></li>
             <li><a href="about.html">About &#10068;</a></li>
         </ul>
     </div>
 
-    <div class="content-container">
-        <div class="section-grid-item"></div>
-        <div class="section-grid-item">
-            <div id="icon">
-                <i class='fas fa-rocket'></i>
-            </div>
-            <h2>WEATHER</h2>
-            <h3>Temperature: 
-                <span id="temp"></span>
-            </h3>
-            <h3>Humidity: 
-                <span id="humidity"></span>
-            </h3>
-            <h3>Precipitation: 
-                <span id="precipitation"></span>
-            </h3>
-        </div>
+    <div id="location-headline"><h2>Where Los Angeles is located &#x1f914;</h2></div>
 
-        <div class="section-grid-item"><p>What is Lorem Ipsum Lorem Ipsum is simply dummy text</p></div>
-        <div class="section-grid-item"><p>What is Lorem Ipsum Lorem Ipsum is simply dummy text</p></div>
-        <div class="section-grid-item"><p>What is Lorem Ipsum Lorem Ipsum is simply dummy text</p></div>
-        <div class="section-grid-item"><p>What is Lorem Ipsum Lorem Ipsum is simply dummy text</p></div>
-        <div class="section-grid-item"><p>What is Lorem Ipsum Lorem Ipsum is simply dummy text</p></div>
-    </div>
-    
-    <div id="article-section">
-        <div id="previous-article" class="article-control"><p>&#10094;</p></div>
-        <div id="articles">
-            <div class="article"><i class="fa fa-cog fa-spin"></i></div>
-            <div class="article"><i class="fa fa-cog fa-spin"></i></div>
-        </div>
-        <div id="next-article" class="article-control"><p>&#10095;</p></div>
-    </div>
+    <div id="map">
 
-    <div class="video">
-        <iframe src="https://www.youtube.com/embed/VOM__NZAFQM?autoplay=1&loop=1" allowfullscreen="allowfullscreen"
-        mozallowfullscreen="mozallowfullscreen" 
-        msallowfullscreen="msallowfullscreen" 
-        oallowfullscreen="oallowfullscreen" 
-        webkitallowfullscreen="webkitallowfullscreen" frameborder="0" class="video-content"></iframe>
-        <div class="description">
-            <h3>Drone footage of Los Angeles &#128641;</h3>
-            <div class="description-paragraph">
-                <p>Hi there!</p>
-                <p id="for-link">Full link for this video - <span id="link"><a href="https://www.youtube.com/watch?v=VOM__NZAFQM&t=106s" target="_blank">https://www.youtube.com/watch?v=VOM__NZAFQM&t=106s</a></span></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="gallery-section">
-        <div class="gallery-section-item"><img src="images/LAsquare2.jpg" alt="Los Angeles"></div>
-        <div class="gallery-section-item"><img src="images/LAsquare3.jpg" alt="Los Angeles"></div>
-        <div class="gallery-section-item"><img src="images/LAsquare4.jpg" alt="Los Angeles"></div>
-        <div class="gallery-section-item"><img src="images/LAsquare5.jpg" alt="Los Angeles"></div>
     </div>
     
     <div id="myModal" class="modal">
@@ -111,7 +61,7 @@
         <span class="prev-picture">&#10094;</span>
         <span class="next-picture">&#10095;</span>
         <img class="modal-content" id="img01">
-        <div id="caption"></div>
+        <div id="for-divs"></div>
     </div>
 
     <div class="socialmedia-buttons">
@@ -183,15 +133,15 @@
         </div>
     </footer>
 </body>
+<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="scripts/map.js"></script>
+
 <script src="scripts/headerElements.js"></script>
-<script src="scripts/MainSection.js"></script>
 <script src="scripts/bodyBehaviour.js"></script>
 <script src="scripts/windowbehaviour.js"></script>
 <script src="scripts/settings.js"></script>
 <script src="scripts/insertheader.js"></script>
-<script src="scripts/gallery.js"></script>
 <script src="scripts/imageModal.js"></script>
 <script src="scripts/mainsections.js"></script>
-<script src="scripts/NYTimes.js"></script>
 </html>

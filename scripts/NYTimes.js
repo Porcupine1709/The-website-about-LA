@@ -18,7 +18,6 @@ async function getDataFromNYT(){
 
 async function extractNYTData() {
     let extract = await getDataFromNYT()
-    console.log(extract[0].multimedia[0].url)
     let articles  = []
     for(let i = 0; i < extract.length; i++){
         let article = {
@@ -37,8 +36,76 @@ async function extractNYTData() {
         } 
         articles.push(article)
     }
-    console.log(articles)
+    articles = articles.filter(article => article.headline !== null)
+    return articles
 } 
 
-extractNYTData()
+const freshData = extractNYTData()
+freshData.then(data => renderNYTData(data))
+
+let articleIndex = 0
+document.getElementById('previous-article').addEventListener('click', showPrevArticle)
+document.getElementById('next-article').addEventListener('click', showNextArticle)
+const articleSection = document.getElementsByClassName('article')
+let spinners = document.getElementsByClassName('fa-cog')
+
+
+async function renderNYTData(freshData) {
+    
+    for(let i = 0; i < 2; i++) {
+      spinners[i].style.display = 'none'
+      articleSection[i].appendChild(createDiv(freshData[i]))
+    }
+}
+
+
+function showPrevArticle(){
+  articleIndex > 1? articleIndex-- : freshData.then(data => articleIndex = data.length - 1)
+  console.log(articleIndex)
+  for(let i = 0; i < articleSection.length; i++) {
+    articleSection[i].removeChild(articleSection[i].children[1])
+    let div
+    freshData.then(data => {
+        div = createDiv(data[articleIndex - i])
+        articleSection[i].appendChild(div)
+      })
+  }
+}
+
+function showNextArticle() {
+  freshData.then(data => articleIndex < data.length - 2? articleIndex++ : articleIndex = 0)
+  console.log(articleIndex)
+  for(let i = 0; i < articleSection.length; i++) {
+    articleSection[i].removeChild(articleSection[i].children[1])
+    let div
+    freshData.then(data => {
+        div = createDiv(data[articleIndex + i])
+        articleSection[i].appendChild(div)
+      })
+  }
+}
+
+
+
+function createDiv(freshData){
+  let container = document.createElement('div')
+      let textContainer = document.createElement('div')
+      let link = document.createElement('a')
+      let article = document.createElement('div')
+      let header = document.createElement('h3')
+
+      header.innerHTML = freshData.headline
+
+      let text = document.createElement('p')
+      text.innerHTML = freshData.text
+      article.appendChild(header)
+      article.appendChild(text)
+      textContainer.appendChild(article)
+      textContainer.classList.add('text-article')
+      container.style.backgroundImage = `url(${freshData.image})`
+      container.classList.add('fresh-article')
+      container.appendChild(textContainer)
+      container.addEventListener('click', () => window.open(freshData.url))
+      return container
+}
 

@@ -1,0 +1,39 @@
+#location-headline {
+    font-size: 3vh;
+    margin-top: 17vh;
+    transition: all 1s;
+    color: #333333;
+}
+
+#location-headline:hover {
+    color: black;
+    letter-spacing: 0.1vw;
+    animation-name: headline;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes headline {
+    0%{
+        letter-spacing: 0;
+    }
+    50%{
+        letter-spacing: 0.1vw;
+    }
+    100%{
+        letter-spacing: 0;
+    }
+}
+
+@media only screen and  (max-width: 1000px) {
+    #location-headline {
+        font-size: 2.5vh;
+    }
+}
+
+@media only screen and  (max-width: 600px) {
+    #location-headline {
+        font-size: 2vh;
+        animation: none;
+    }
+}
