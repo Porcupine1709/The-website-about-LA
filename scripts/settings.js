@@ -26,6 +26,13 @@ async function setMarginAndGridGap(margin, gridGap) {
       divSections.pop()
       divSections.shift()
       break
+    case ('/places.html'):
+      divSections.splice(2, 2)
+      divSections.pop()
+      divSections.pop()
+      divSections.shift()
+      console.log(divSections)
+      break
   }
 
   //Setting the width for all of these elements and left margin in procents, setting mutual transition property 
@@ -56,6 +63,9 @@ async function dealWithUpperSection(gridGap) {
     case('/about.html'):
       mainSection = document.getElementById('about-section')
       break
+    case('/places.html'):
+      mainSection = document.getElementById('places-container')
+      break
   }
 
   insertHeader ? firstHeader.style.display = 'block' : firstHeader.style.display = 'none'
@@ -75,7 +85,7 @@ async function alignSMBar(margin){
   let socialMedias = document.getElementsByClassName('socialmedia-buttons')[0]
   let mediaIcons = Array.from(socialMedias.getElementsByTagName('a'))
   
-  if(margin > 5) {
+  if(margin > 5 && window.innerWidth > 1000) {
     //setting style for social media bar if side margin of main elements is greater that 5%
     socialMedias.style.position = 'fixed'
     socialMedias.style.top = '10vh'

@@ -77,10 +77,10 @@
 
 .article i {
     position: absolute;
-    left: 15vw;
-    top: 41%;
+    left: 45%;
+    top: 45%;
     transform: translate(50%, 0);
-    font-size: 5vw;
+    font-size: 2rem;
 }
 
 .article-control {

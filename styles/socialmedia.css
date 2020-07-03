@@ -1,7 +1,7 @@
 .socialmedia-buttons {
     position: fixed;
     top: 30vh;
-    left: -15%;
+    left: -5%;
 }
 
 .socialmedia-buttons a {
@@ -14,7 +14,7 @@
 }
 
 .socialmedia-buttons a#facebook {
-    border-top-right-radius: 10px;
+    border-top-right-radius: 1vh;
     background-color: blue;
 }
 
@@ -36,7 +36,7 @@
 
 .socialmedia-buttons a#google {
     background-image: linear-gradient(to right, red, green);
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 1vh;
 }
 
 .socialmedia-buttons a:hover {

@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/map.css">
     <link rel="stylesheet" href="styles/headline.css">
+    <link rel="stylesheet" href="styles/places.css">
     <link rel="shortcut icon" type="image/png" href="images/bridge.png">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-    <title>Location</title>
+    <title>Places</title>
 </head>
 <body>
     <div id="firstheader">
@@ -28,10 +29,10 @@
         </a>
         </div>
         <div class="header-grid-item">
-            <a href=""><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
+            <a href="location.html"><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
         </div>
         <div class="header-grid-item">
-            <a href="places.html"><h5>Places &#127745;</h5></a>
+            <a href=""><h5>Places &#127745;</h5></a>
         </div>
         <div class="header-grid-item">
             <a href="about.html"><h5>About &#10068;</h5></a>
@@ -44,16 +45,38 @@
         <span id="closeNavbar">&times;</span>
         <ul>
             <li><a href="index.html">Home &#127969;</a></li>
-            <li><a>Location &#128681;</a></li>
-            <li><a href="places.html">Places &#127745;</a></li>
+            <li><a href="location.html">Location &#128681;</a></li>
+            <li><a>Places &#127745;</a></li>
             <li><a href="about.html">About &#10068;</a></li>
         </ul>
     </div>
 
-    <div id="location-headline"><h2>Where Los Angeles is located &#x1f914;</h2></div>
-
-    <div id="map">
-
+    <div id="places-container">
+        <div class="place">
+            <h1>Downtown of Los Angeles</h1>
+            <p><img src="images/dtla.png" alt="Downtown of LA">Downtown Los Angeles (DTLA) is the central business district of Los Angeles, California, as well as a diverse residential neighborhood of some 85,000 people, and covers 5.84 sq mi (15.1 km2). A 2013 study found that the district is home to over 500,000 jobs. It is also part of Central Los Angeles.</p>
+            <a href="https://en.wikipedia.org/wiki/Downtown_Los_Angeles" target="_blank"><h4>More info...</h4></a>
+        </div>
+        <div class="place">
+            <h1>Staples center</h1>
+            <p><img src="images/SC_Exterior_Star_Plaza_Slide-fd2aa1e6b8.jpg" alt="Staples center">Staples Center (officially stylized as STAPLES Center) is a multi-purpose arena in Downtown Los Angeles. Adjacent to the L.A. Live development, it is located next to the Los Angeles Convention Center complex along Figueroa Street. The arena opened on October 17, 1999.</p>
+            <a href="https://en.wikipedia.org/wiki/Staples_Center" target="_blank"><h4>More info</h4></a>
+        </div>
+        <div class="place">
+            <h1>Hollywood sign</h1>
+            <p><img src="images/hollywood.jpg" alt="Hollywood sign">The Hollywood Sign (formerly the Hollywoodland Sign) is an American landmark and cultural icon overlooking Hollywood, Los Angeles, California. It is situated on Mount Lee, in the Hollywood Hills area of the Santa Monica Mountains.</p>
+            <a href="https://en.wikipedia.org/wiki/Hollywood_Sign" target="_blank"><h4>More info</h4></a>
+        </div>
+        <div class="place">
+            <h1>Disneyland park</h1>
+            <p><img src="images/Disneyland.jpg" alt="Disneyland palace">Disneyland Park, originally Disneyland, is the first of two theme parks built at the Disneyland Resort in Anaheim, California, opened on July 17, 1955. It is the only theme park designed and built to completion under the direct supervision of Walt Disney.</p>
+            <a href="https://en.wikipedia.org/wiki/Disneyland" target="_blank"><h4>More info</h4></a>
+        </div>
+        <div class="place">
+            <h1>Griffith observatory</h1>
+            <p><img src="images/Griffith_observatory.jpg" alt="Griffith_Observatory">The Griffith Observatory is a facility in Los Angeles, California, sitting on the south-facing slope of Mount Hollywood in Los Angeles' Griffith Park. It commands a view of the Los Angeles Basin, including Downtown Los Angeles to the southeast, Hollywood to the south, and the Pacific Ocean to the southwest.</p>
+            <a href="https://en.wikipedia.org/wiki/Griffith_Observatory" target="_blank"><h4>More info</h4></a>
+        </div>
     </div>
     
     <div id="myModal" class="modal">
@@ -133,9 +156,7 @@
         </div>
     </footer>
 </body>
-<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<script src="scripts/map.js"></script>
 
 <script src="scripts/headerElements.js"></script>
 <script src="scripts/bodyBehaviour.js"></script>

@@ -1,3 +1,18 @@
+@media only screen and  (max-width: 1500px) {
+  .footer-container a > p, .icon-logo {
+      font-size: 1rem;
+      font-weight: 300;
+  } 
+
+  .footer-container a > p:hover {
+    background-color: #2200ff;
+    color: #bbaaff;
+    padding: 5.7% 10%;
+    box-shadow: 0 0 5px rgba(255, 44, 7), inset 0 0 5px rgba(7, 255, 44);
+  }
+}
+
+
 @media only screen and  (max-width: 1000px) {
     .header-container {
         grid-template-columns: repeat(2, 1fr);

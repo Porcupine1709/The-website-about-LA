@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/bridge.png">
     <link rel="stylesheet" href="styles/mainstyle.css">
     <link rel="stylesheet" href="styles/headersection.css">
-    <link rel="stylesheet" href="styles/gallerysection.css">
     <link rel="stylesheet" href="styles/footersection.css">
     <link rel="stylesheet" href="styles/socialmedia.css">
     <link rel="stylesheet" href="styles/media.css">
-    <link rel="stylesheet" href="styles/map.css">
-    <link rel="stylesheet" href="styles/headline.css">
-    <link rel="shortcut icon" type="image/png" href="images/bridge.png">
+    <link rel="stylesheet" href="styles/aboutSection.css">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-    <title>Location</title>
+    <title>About this website</title>
 </head>
 <body>
     <div id="firstheader">
@@ -28,7 +25,7 @@
         </a>
         </div>
         <div class="header-grid-item">
-            <a href=""><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
+            <a href="location.html"><h5 title="Location of Los Angeles">Location &#128681;</h5></a>
         </div>
         <div class="header-grid-item">
             <a href="places.html"><h5>Places &#127745;</h5></a>
@@ -44,24 +41,46 @@
         <span id="closeNavbar">&times;</span>
         <ul>
             <li><a href="index.html">Home &#127969;</a></li>
-            <li><a>Location &#128681;</a></li>
+            <li><a href="location.html">Location &#128681;</a></li>
             <li><a href="places.html">Places &#127745;</a></li>
             <li><a href="about.html">About &#10068;</a></li>
         </ul>
     </div>
 
-    <div id="location-headline"><h2>Where Los Angeles is located &#x1f914;</h2></div>
-
-    <div id="map">
-
-    </div>
-    
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <span class="prev-picture">&#10094;</span>
-        <span class="next-picture">&#10095;</span>
-        <img class="modal-content" id="img01">
-        <div id="for-divs"></div>
+    <div id="about-section">
+        <h1>About this webpage</h1>
+        <p>This page is one of the projects of my portfolio, I decided to devote it to LA.</p>
+        <h3>About Ilya Nesterow</h3>
+        <p>I am a junior Javascript frontend developer with no professional experience, currently actively working on my portfolio</p>
+        <p>I wanted to apply my HTML, CSS, JS and RWD skills in practice. This website just solidifies them:)</p>
+        <p>This website is written on vanilla/plain Javascript, it has responsive design (resize to check:)).</p>
+        <h3>What makes this webpage so special as the project?&#129299;</h3>
+        <ul>
+            <li>
+                <p class="argument">There are plenty of different styles applied on this webpage&#128521;</p>
+            </li>
+            <li>
+                <p class="argument">Responsive Web design</p>
+            </li>
+            <li>
+                <p class="argument">There is map embeded on this webpage</p>
+            </li>
+            <li>
+                <p class="argument">There is video from youtube embeded in Iframe</p>
+            </li>
+            <li>
+                <p class="argument">Website calls third party APIs: climaCell, NYTimes and MapQuest &#128513;</p>
+            </li>
+            <li>
+                <p class="argument">If you are on computer you are able to change the layout of this document in the footer section</p>
+            </li>
+            <li>
+                <p class="argument">Almost everything on this webpage is dynamic and smooth &#127752;</p>
+            </li>
+            <li>
+                <p class="argument">Don't judge me strictly, this my first serious solo web project for portfolio, moreover I don't have solid experience in UI and UX</p>
+            </li>
+        </ul>
     </div>
 
     <div class="socialmedia-buttons">
@@ -133,10 +152,7 @@
         </div>
     </footer>
 </body>
-<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<script src="scripts/map.js"></script>
-
 <script src="scripts/headerElements.js"></script>
 <script src="scripts/bodyBehaviour.js"></script>
 <script src="scripts/windowbehaviour.js"></script>

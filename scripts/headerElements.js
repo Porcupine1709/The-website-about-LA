@@ -1,6 +1,7 @@
 //Script for navbar on small screens
 const mobileNavbar = document.getElementById('options')
 const closeMobileNavbar = document.getElementById('closeNavbar')
+//const subNavbar = document.getElementById('sub-navbar')
 
 const curtainNavbar = document.getElementsByClassName('navbar-for-mobile')[0]
 curtainNavbar.style.transition = 'left 2s'

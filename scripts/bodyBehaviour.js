@@ -11,6 +11,9 @@ switch(location.pathname) {
   case('/about.html'):
     mainSection = document.getElementById('about-section')
     break
+  case('/places.html'):
+    mainSection = document.getElementById('places-container')
+    break
 }
 let prevScrollpos = window.pageYOffset
 document.body.style.transition = 'all 2s'
@@ -39,6 +42,7 @@ window.setInterval(() => {
 //this method will asynchronously regulate navbar's and headers position according to webpage's settings
 async function changeHeaderMargin() {
   if(window.innerWidth > 500) {
+  
     let margin = parseInt(localStorage.getItem('margin'))
     var currentScrollPos = window.pageYOffset;
     switch (localStorage.getItem('insertHeader')) {
@@ -98,23 +102,24 @@ async function moveSocialMedias() {
   var currentScrollPos = window.pageYOffset;
   let socialMedais = document.getElementsByClassName('socialmedia-buttons')[0]
   let socialMediahidePoint
-    window.localStorage.getItem('insertHeader') === 'true'?
-      socialMediahidePoint = window.innerHeight * 0.50 :
-      socialMediahidePoint = window.innerHeight * 0.05
   let bottomSMHidePoint
+  window.localStorage.getItem('insertHeader') === 'true'?
+    socialMediahidePoint = window.innerHeight * 0.50 :
+    socialMediahidePoint = window.innerHeight * 0.05
+  //sets value to bottomSMHidepoint 
    switch (location.pathname) {
      case ('/index.html'):
        bottomSMHidePoint = document.body.scrollHeight * 1
-       window.localStorage.getItem('insertHeader') === 'true'?
-         socialMediahidePoint = window.innerHeight * 0.50 :
-         socialMediahidePoint = window.innerHeight * 0.05
        break;
      case('/location.html'):
        bottomSMHidePoint = document.body.scrollHeight * 0.6
-       window.localStorage.getItem('insertHeader') === 'true'?
-         socialMediahidePoint = window.innerHeight * 0.30 :
-         socialMediahidePoint = window.innerHeight * 0.05
        break;
+     case('/about.html'):
+       bottomSMHidePoint = document.body.scrollHeight * 0.7
+       break
+     case('/places.html'):
+       bottomSMHidePoint = document.body.scrollHeight * 1
+       break
    }
   
   socialMedais.style.transition = 'left 0.5s'
@@ -122,17 +127,46 @@ async function moveSocialMedias() {
   //Will be executed if documents width is more than 1000 px and side margin is more than 5%
   if(window.innerWidth > 1000 && margin > 5) {
     if(window.pageYOffset < socialMediahidePoint || currentScrollPos > bottomSMHidePoint * 0.6) {
-      socialMedais.style.left = '-5%'
+      socialMedais.style.left = '-7%'
     } else {
       socialMedais.style.left = '0'
     }
   }
 }
 
+//Dynamical change of the footer section
+async function footerSectionsBehaviour() {
+  let footer = document.getElementsByClassName('footer-container')[0]
+  footer.style.transition = 'all 2s'
+  let config = { threshold: [0, 0.5, 1] }
+  
+  let changeFooterBackgroung = (entries) => {
+    if(entries[0].isIntersecting) {
+      if(entries[0].intersectionRatio  > 0 && entries[0].intersectionRatio  <  0.25) {
+        entries[0].target.style.backgroundColor = '#11fd11'
+      } else if (entries[0].intersectionRatio  > 0.25 && entries[0].intersectionRatio < 0.5) {
+        entries[0].target.style.backgroundColor = 'rgba(0, 25, 253, 0.7)'
+      } else if (entries[0].intersectionRatio  > 0.5 && entries[0].intersectionRatio < 0.75) {
+        entries[0].target.style.backgroundColor = 'rgba(0, 0, 100, 0.6)'
+      } else if (entries[0].intersectionRatio  > 0.75 && entries[0].intersectionRatio < 1) {
+        entries[0].target.style.backgroundColor = '#222222'
+      } 
+    } else {
+      entries[0].target.style.backgroundColor = 'black'
+      console.log('green' + entries[0].target.style.backgroundColor)
+    }
+  }
+ 
+  let observer = new IntersectionObserver(changeFooterBackgroung, config)
+
+  observer.observe(footer)
+}
+
 //This method executes two methods above asynchronously 
 async function bodyChildrenBehaviour() {
   await changeHeaderMargin()
   await moveSocialMedias()
+  await footerSectionsBehaviour()
 }
 
 //Attaching bodyChildrenBehavior method to the window.onscroll event

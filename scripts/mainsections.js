@@ -18,6 +18,12 @@ switch (location.pathname) {
      divSections.pop()
      divSections.shift()
      break
+   case ('/places.html'):
+     divSections.splice(2, 2)
+     divSections.pop()
+     divSections.pop()
+     divSections.shift()
+     break
  }
 
 

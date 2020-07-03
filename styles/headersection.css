@@ -22,6 +22,13 @@
     z-index: 4;
 }
 
+.header-grid-item:nth-child(3):hover #sub-navbar{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    background-color: #eee;
+}
+
 .navbar-options {
     background-color: #eee;
     box-shadow: 0 0 5px;
