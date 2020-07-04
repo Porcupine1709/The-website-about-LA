@@ -1,4 +1,4 @@
-L.mapquest.key = '<key>';
+L.mapquest.key = 'JctifwahNA7AlwsVDe4ndnbH2327dGpW';
 
 // 'map' refers to a <div> element with the ID map
 L.mapquest.map('map', {

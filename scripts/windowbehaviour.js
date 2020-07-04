@@ -15,7 +15,7 @@ async function getDataAsync(item)
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "climacell-microweather-v1.p.rapidapi.com",
-		"x-rapidapi-key": "<key>"
+		"x-rapidapi-key": "bd0b30ab4dmsh22d059c15a32a28p1c4cd5jsn33d087f197cf"
 	}
   })
 
@@ -59,7 +59,7 @@ async function getWeather() {
 /*Adds method which will be executed when window.onload event is fired*/
 window.onload = async () => {
   if(window.location.pathname === '/index.html') {
-    //await getWeather()
+    await getWeather()
   }
   if (window.innerWidth > 500) {
     document.getElementById("gridgap").checked = gridGap

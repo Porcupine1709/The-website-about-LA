@@ -5,9 +5,9 @@ const insertheader = document.getElementById('insertheader')
 const setMargin = document.getElementById('setmargin')
 const stickyNavbar = document.getElementById('navbarposition')
 
+
 async function setMarginAndGridGap(margin, gridGap) {
-  const divSections = Array.from(document.body.children).filter(item => item.tagName === 'DIV')
- 
+  let divSections = Array.from(document.body.children).filter(item => item.tagName === 'DIV')
   //retrieving div elements which need to be modified on index.html page
   
   switch (location.pathname) {
@@ -31,7 +31,6 @@ async function setMarginAndGridGap(margin, gridGap) {
       divSections.pop()
       divSections.pop()
       divSections.shift()
-      console.log(divSections)
       break
   }
 
