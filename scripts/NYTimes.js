@@ -1,6 +1,6 @@
 async function requestingNYT(weekAgo, now) {
    
-   let response = fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=los&angeles&facet_field=day_of_week&facet=true&begin_date=${weekAgo}&end_date=${now}&api-key=hHpSXf4LThosaDW9nPwBSWZELStt18hU`)
+   let response = fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=los&angeles&facet_field=day_of_week&facet=true&begin_date=${weekAgo}&end_date=${now}&api-key=NYT_KEY`)
 
    let json = await response.then(data => data.json())
    return json
